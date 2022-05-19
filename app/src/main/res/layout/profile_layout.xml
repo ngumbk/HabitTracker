@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:padding="15dp">
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintWidth_percent="0.20"
+        app:layout_constraintHeight_percent="0.80"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/purple_200"
+        android:contentDescription="Profile Button" />
+
+    <ProgressBar
+        android:id="@+id/xpBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintHeight_percent="0.20"
+        app:layout_constraintLeft_toRightOf="@+id/profileButton"
+        app:layout_constraintTop_toTopOf="@+id/profileButton"
+        app:layout_constraintBottom_toBottomOf="@+id/profileButton"
+        android:progressDrawable="@drawable/custom_xpbar"
+        />
+    <TextView
+        android:id="@+id/lvlText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toRightOf="@+id/xpBar"
+        app:layout_constraintTop_toTopOf="@+id/xpBar"
+        app:layout_constraintBottom_toBottomOf="@+id/xpBar"
+        android:background="@color/blue_1"
+        android:gravity="center"
+        android:text="1"
+        />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.75"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toRightOf="@+id/lvlText"
+        app:layout_constraintTop_toTopOf="@+id/xpBar"
+        app:layout_constraintBottom_toBottomOf="@+id/xpBar"
+        android:background="@color/gray"
+        android:text="settings"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
