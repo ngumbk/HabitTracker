@@ -8,7 +8,7 @@
     android:padding="15dp">
 
     <ImageButton
-        android:id="@+id/profileButton"
+        android:id="@+id/profile_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_default="percent"
@@ -18,7 +18,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/purple_200"
-        android:contentDescription="Profile Button" />
+        android:contentDescription="Profile Button"
+        android:onClick="profile_button_clicked"/>
 
     <ProgressBar
         android:id="@+id/xpBar"
@@ -29,13 +30,13 @@
         app:layout_constraintHeight_default="percent"
         app:layout_constraintWidth_percent="0.35"
         app:layout_constraintHeight_percent="0.20"
-        app:layout_constraintLeft_toRightOf="@+id/profileButton"
-        app:layout_constraintTop_toTopOf="@+id/profileButton"
-        app:layout_constraintBottom_toBottomOf="@+id/profileButton"
+        app:layout_constraintLeft_toRightOf="@+id/profile_button"
+        app:layout_constraintTop_toTopOf="@+id/profile_button"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_button"
         android:progressDrawable="@drawable/custom_xpbar"
         />
     <TextView
-        android:id="@+id/lvlText"
+        android:id="@+id/lvl_text"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintLeft_toRightOf="@+id/xpBar"
@@ -52,14 +53,14 @@
         android:layout_height="0dp"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintWidth_percent="0.30"
         app:layout_constraintHeight_percent="0.75"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toRightOf="@+id/lvlText"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/lvl_text"
         app:layout_constraintTop_toTopOf="@+id/xpBar"
         app:layout_constraintBottom_toBottomOf="@+id/xpBar"
         android:background="@color/gray"
-        android:text="settings"
+        android:text="SETTINGS"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
