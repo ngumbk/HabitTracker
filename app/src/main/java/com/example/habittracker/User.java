@@ -21,6 +21,7 @@ public class User {
             this.NotificationTime = null;
             this.Tag = null;
         }
+
     }
     public void add_habit(String HabitName, String HabitDescription, String Periodicity, String NotificationTime, String Tag) {
         UserHabits.add(new Habit(HabitName, HabitDescription, Periodicity, NotificationTime, Tag));
@@ -57,8 +58,31 @@ public class User {
         this.email = null;
         this.UID = null;
         UserHabits = new ArrayList<>();
-        UserHabits.add(new Habit());
-        UserHabits.add(new Habit());
+        //UserHabits.add(new Habit());
+        //UserHabits.add(new Habit());
     }
-
+    public boolean is_habit_tracked(String searched_value) {
+        if (!UserHabits.isEmpty()) {
+            for (int i = 0; i < UserHabits.size(); i++) {
+                if (UserHabits.get(i).HabitName.equals(searched_value)) return true;
+            }
+        }
+        return false;
+    }
+    public ArrayList<String> get_habit_by_name(String name) {
+        if (!UserHabits.isEmpty()) {
+            ArrayList<String> searched_habit = new ArrayList<>();
+            for (int i = 0; i < UserHabits.size(); i++) {
+                if (UserHabits.get(i).HabitName.equals(name)) {
+                    searched_habit.add(UserHabits.get(i).HabitName);
+                    searched_habit.add(UserHabits.get(i).HabitDescription);
+                    searched_habit.add(UserHabits.get(i).Periodicity);
+                    searched_habit.add(UserHabits.get(i).NotificationTime);
+                    searched_habit.add(UserHabits.get(i).Tag);
+                    return searched_habit;
+                }
+            }
+        }
+        return null;
+    }
 }

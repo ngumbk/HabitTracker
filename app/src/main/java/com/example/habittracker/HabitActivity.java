@@ -30,12 +30,37 @@ public class HabitActivity extends AppCompatActivity {
 
         dbRef = FirebaseDatabase.getInstance("https://habittrackercoursework-default-rtdb.europe-west1.firebasedatabase.app").getReference();
 
-
         TextView HabitName = findViewById(R.id.habit_name);
         HabitName.setText(intent.getStringExtra("HabitName"));
 
         TextView HabitDescription = findViewById(R.id.habit_description);
         HabitDescription.setText(intent.getStringExtra("HabitDescription"));
+
+        if(intent.getBooleanExtra("HabitTracked", false)) {
+            MyApplication my_app = MyApplication.get_instance();
+            User user = my_app.get_user();
+
+            //making old views invisible
+            Spinner Periodicity_spinner = findViewById(R.id.spinner_periodicity);
+            Periodicity_spinner.setVisibility(View.INVISIBLE);
+            EditText Notification_edittext = findViewById(R.id.edittext_notification_time);
+            Notification_edittext.setVisibility(View.INVISIBLE);
+            Spinner Tag_spinner = findViewById(R.id.spinner_tag);
+            Tag_spinner.setVisibility(View.INVISIBLE);
+
+            TextView Periodicity_textview = findViewById(R.id.textview_periodicity_set);
+            Periodicity_textview.setVisibility(View.VISIBLE);
+            Periodicity_textview.setText(user.get_habit_by_name(intent.getStringExtra("HabitName")).get(2));
+
+            TextView Notification_textview = findViewById(R.id.textview_notification_time_set);
+            Notification_textview.setVisibility(View.VISIBLE);
+            Notification_textview.setText(user.get_habit_by_name(intent.getStringExtra("HabitName")).get(3));
+
+            TextView Tag_textview = findViewById(R.id.textview_tag_set);
+            Tag_textview.setVisibility(View.VISIBLE);
+            Tag_textview.setText(user.get_habit_by_name(intent.getStringExtra("HabitName")).get(4));
+
+        }
 
         Button AffirmativeButton = findViewById(R.id.try_button);
         AffirmativeButton.setOnClickListener(new View.OnClickListener() {

@@ -42,35 +42,45 @@ public class HabitsListActivity extends AppCompatActivity implements View.OnClic
     }
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(HabitsListActivity.this, HabitActivity.class);;
+
+        MyApplication my_app = MyApplication.get_instance();
+        User user = my_app.get_user();
+
+        String chosen_habit = null;
+        Intent intent = new Intent(HabitsListActivity.this, HabitActivity.class);
         switch (view.getId()) {
             case R.id.habit_button_custom:
-                intent.putExtra("HabitName", "User Habit");
+                chosen_habit = "User Habit";
                 break;
             case R.id.habit_button_jogging:
-                intent.putExtra("HabitName", "Jogging");
-                intent.putExtra("HabitDescription", "You simply should spend some time jogging in the morning (or even evening)");
+                chosen_habit = "Jogging";
+                intent.putExtra("HabitDescription", "You simply should spend some time jogging in the morning (or even evening).");
                 break;
             case R.id.habit_button_water:
-                intent.putExtra("HabitName", "GlassOfWater");
-                intent.putExtra("HabitDescription", "Drink a glass of water every (preferred) 3 hours, which makes your body hydrated");
+                chosen_habit = "Glass Of Water";
+                intent.putExtra("HabitDescription", "Drink a glass of water every (preferred) 3 hours, which makes your body hydrated.");
                 break;
             case R.id.habit_button_warmup:
-                intent.putExtra("HabitName", "Warmup");
+                chosen_habit = "Warmup";
                 intent.putExtra("HabitDescription", "Morning warmup could give you a charge of power in the morning," +
-                        " so you'll have your first hours in the day more productive");
+                        " so you'll have your first hours in the day more productive.");
                 break;
             case R.id.habit_button_call:
-                intent.putExtra("HabitName", "CallParents");
-                intent.putExtra("HabitDescription", "Call your elder parents, they'll be glad to hear from you");
+                chosen_habit = "Call Parents";
+                intent.putExtra("HabitDescription", "Call your elder parents, they'll be glad to hear from you.");
                 break;
             case R.id.habit_button_smoking:
-                intent.putExtra("HabitName", "GiveUpSmoking");
-                intent.putExtra("HabitDescription", "Giving up smoking might be tricky, so it's better to track it more frequently");
+                chosen_habit = "Give Up Smoking";
+                intent.putExtra("HabitDescription", "Giving up smoking might be tricky, so it's better to track it more frequently.");
                 break;
             default:
                 break;
         }
+        intent.putExtra("HabitName", chosen_habit);
+        if(user.is_habit_tracked(chosen_habit)) {
+            intent.putExtra("HabitTracked", true);
+        }
+        else {intent.putExtra("HabitTracked", false);}
         startActivity(intent);
     }
 

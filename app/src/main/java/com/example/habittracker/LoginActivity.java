@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
@@ -96,9 +97,14 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Map<String, Object> user_data = (HashMap<String, Object>) task.getResult().getValue();
                                 Log.d(LogTag, "DB DOWNLOAD SUCCESS: " + user_data);
-                                for (int i = 0; i < user_data.size(); i++) {
-                                    Map HabitAttributes = user_data.get(i).values();
-                                    user.add_habit();
+                                Iterator it = user_data.entrySet().iterator();
+                                while (it.hasNext()) {
+                                    Map.Entry pair = (Map.Entry)it.next();
+                                    Map<String, Object> habit_description = (Map)pair.getValue();
+                                    user.add_habit(pair.getKey().toString(), habit_description.get("HabitDescription").toString(),
+                                            habit_description.get("Periodicity").toString(), habit_description.get("NotificationTime").toString(),
+                                            habit_description.get("Tag").toString());
+                                    it.remove(); // avoids a ConcurrentModificationException
                                 }
                             }
                             else {
