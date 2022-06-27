@@ -18,8 +18,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/purple_200"
-        android:contentDescription="Profile Button"
-        android:onClick="profile_button_clicked"/>
+        android:contentDescription="@string/profile_button_description"/>
 
     <ProgressBar
         android:id="@+id/xpBar"
@@ -44,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/xpBar"
         android:background="@color/blue_1"
         android:gravity="center"
-        android:text="1"
+        android:text="@string/level"
         />
 
     <Button
@@ -55,12 +54,12 @@
         app:layout_constraintHeight_default="percent"
         app:layout_constraintWidth_percent="0.30"
         app:layout_constraintHeight_percent="0.75"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintLeft_toRightOf="@+id/lvl_text"
         app:layout_constraintTop_toTopOf="@+id/xpBar"
         app:layout_constraintBottom_toBottomOf="@+id/xpBar"
         android:background="@color/gray"
-        android:text="SETTINGS"
+        android:text="@string/settings"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

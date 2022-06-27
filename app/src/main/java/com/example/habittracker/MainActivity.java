@@ -2,9 +2,11 @@ package com.example.habittracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,27 +14,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Profile Button clicked
+        ImageButton ProfileButton = findViewById(R.id.profile_button);
+        ProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Habits Button clicked
+        Button HabitsButton = findViewById(R.id.habits_button);
+        HabitsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HabitsListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
-    public void profile_button_clicked(View view) {
-        setContentView(R.layout.activity_profile);
-    }
-    public void login_button_clicked(View view) {
-        System.out.println("LOGINLOGINLOGINLOGINLOGINLOGINLOGINLOGINLOGINLOGINLOGIN");
-        Button login_button = findViewById(R.id.login_button);
-        Button logout_button = findViewById(R.id.logout_button);
-        login_button.setVisibility(view.INVISIBLE);
-        logout_button.setVisibility(view.VISIBLE);
-    }
-    public void logout_button_clicked(View view) {
-        System.out.println("LOGUTLOGUTLOGUTLOGUTLOGUTLOGUTLOGUTLOGUTLOGUTLOGUTLOGUT");
-        Button login_button = findViewById(R.id.login_button);
-        Button logout_button = findViewById(R.id.logout_button);
-        login_button.setVisibility(view.VISIBLE);
-        logout_button.setVisibility(view.INVISIBLE);
-    }
-    public void back_to_main_activity_button_clicked(View view) {
-        setContentView(R.layout.activity_main);
-    }
+
 
 
 }

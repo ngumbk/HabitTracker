@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">HabitTracker</string>
+    <string name="habits">habits</string>
+    <string name="default_habit_name">Habit name</string>
+    <string name="periodicity">Periodicity</string>
+    <string name="notification">Notification</string>
+    <string name="tag">Tag</string>
+    <string name="try_button">try</string>
+    <string name="dismiss_button">dismiss</string>
+    <string name="custom_habit">custom habit</string>
+    <string name="jogging">jogging</string>
+    <string name="glass_of_water">glass of water</string>
+    <string name="morning_warmup">morning warmup</string>
+    <string name="call_parents">call parents</string>
+    <string name="give_up_smoking">give up smoking</string>
+    <string name="back">back</string>
+    <string name="default_habit_description">Habit description:\n</string>
+    <string name="default_username">Username</string>
+    <string name="login">login</string>
+    <string name="logout">logout</string>
+    <string name="profile_button_description">Profile Button</string>
+    <string name="level">1</string>
+    <string name="settings">settings</string>
+    <string name="default_activity_check">Have you done your activity on %date%, %time%?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="activity_login">Login to save your notes</string>
+    <string name="email_default">Email</string>
+    <string name="password_default">Password</string>
+    <string name="sign_up">sign up</string>
+    <string name="activity_signup">Sign up</string>
+    <string-array name="periodicity_options">
+        <item>3 hours</item>
+        <item>1 day</item>
+        <item>1 week</item>
+    </string-array>
+    <string-array name="tag_options">
+        <item>Obligatory</item>
+        <item>Not obligatory</item>
+    </string-array>
 </resources>

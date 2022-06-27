@@ -14,16 +14,6 @@
         android:layout_weight="2"
         android:layout_marginEnd="5dp"
         android:background="@color/gray"
-        android:text="HABITS"
-        />
-    <Button
-        android:id="@+id/store_button"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginStart="5dp"
-        android:background="@color/gray"
-        android:text="STORE"
-        />
+        android:text="@string/habits"/>
 
 </LinearLayout>

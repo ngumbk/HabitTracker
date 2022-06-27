@@ -18,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".HabitsListActivity" />
+        <activity android:name=".HabitActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
     </application>
 
 </manifest>

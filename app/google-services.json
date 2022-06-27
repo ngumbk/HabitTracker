@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "740227933374",
+    "firebase_url": "https://habittrackercoursework-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "habittrackercoursework",
+    "storage_bucket": "habittrackercoursework.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740227933374:android:c924f16a6ddc8b1fc26aef",
+        "android_client_info": {
+          "package_name": "com.example.habittracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740227933374-6e5aaafafeidpk6skq1voka7619mmb18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGIOk6Q2Zf-rB1lXFOp9XY9VYp_LB-iAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740227933374-6e5aaafafeidpk6skq1voka7619mmb18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/habit_button_custom"
+                android:text="@string/custom_habit"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"/>
+            <Button
+                android:id="@+id/habit_button_jogging"
+                android:text="@string/jogging"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/habit_button_water"
+                android:text="@string/glass_of_water"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"/>
+            <Button
+                android:id="@+id/habit_button_warmup"
+                android:text="@string/morning_warmup"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/habit_button_call"
+                android:text="@string/call_parents"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"/>
+            <Button
+                android:id="@+id/habit_button_smoking"
+                android:text="@string/give_up_smoking"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back_button_habits"
+            android:text="@string/back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
